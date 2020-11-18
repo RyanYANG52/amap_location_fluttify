@@ -338,7 +338,8 @@ mixin _Community on _Holder {
       android: (pool) async {
         _locationController?.close();
         _locationController = null;
-
+        
+        _androidLocationDelegate._onLocationChanged = null;
         _androidLocationDelegate = null;
 
         await _androidClient?.stopLocation();
