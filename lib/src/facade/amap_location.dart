@@ -82,6 +82,7 @@ mixin _Community on _Holder {
               aoiName: await location.getAoiName(),
               accuracy: await location.getAccuracy(),
               speed: await location.speed,
+              satellites: await location.getSatellites(),
             ));
           }
         };
@@ -224,6 +225,7 @@ mixin _Community on _Holder {
           aoiName: await location.getAoiName(),
           accuracy: await location.getAccuracy(),
           speed: await location.getSpeed(),
+          satellites: await location.getSatellites(),
         ));
       };
 
@@ -319,6 +321,7 @@ mixin _Community on _Holder {
           aoiName: await regeocode?.get_AOIName(),
           accuracy: await location.horizontalAccuracy,
           speed: await location.speed,
+          
         ));
       };
 
