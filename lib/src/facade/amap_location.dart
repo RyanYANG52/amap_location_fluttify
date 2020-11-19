@@ -338,9 +338,12 @@ mixin _Community on _Holder {
       android: (pool) async {
         _locationController?.close();
         _locationController = null;
-        
-        _androidLocationDelegate._onLocationChanged = null;
-        _androidLocationDelegate = null;
+
+        //有时候在stopLocation的过程中还会调用_onLocationChanged，出现null报错
+        if(_androidLocationDelegate!= null){
+          _androidLocationDelegate._onLocationChanged = null;
+          _androidLocationDelegate = null;
+        }
 
         await _androidClient?.stopLocation();
       },
