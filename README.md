@@ -1,3 +1,7 @@
+# Changes
+1. 添加android卫星个数
+2. stopLocation会出现_onLocationChanged的null报错
+
 ![Logo](https://github.com/fluttify-project/fluttify-core-example/blob/develop/other/Logo-Landscape.png?raw=true)
 
 # 高德 `定位`组件
